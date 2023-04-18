@@ -16,6 +16,24 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData)\r",
+									"console.log(jsonData.apiVersion)\r",
+									"console.log(jsonData.title)\r",
+									"console.log(jsonData.paymentCurrency)\r",
+									"console.log(jsonData.links[5].rel)\r",
+									"console.log(jsonData.categories[0])\r",
+									"\r",
+									"pm.environment.set(\"entityapiVersion\", jsonData.apiVersion);\r",
+									"\r",
+									"pm.environment.set(\"entitytitle\", jsonData.title);\r",
+									"\r",
+									"pm.environment.set(\"entityPaymentCurrency\", jsonData.paymentCurrency);\r",
+									"\r",
+									"pm.environment.set(\"entityrel\", jsonData.links[5].rel);\r",
+									"\r",
+									"pm.environment.set(\"entityauthorization\", jsonData.categories[0]);\r",
+									"\r",
 									"pm.test(\"Status code should be 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
@@ -24,12 +42,6 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"\r",
-									"var jsonData = pm.response.json();\r",
-									"console.log(jsonData)\r",
-									"console.log(jsonData.apiVersion)\r",
-									"console.log(jsonData.title)\r",
-									"console.log(jsonData.paymentCurrency)\r",
-									"console.log(jsonData.links[5].rel)\r",
 									"\r",
 									"pm.test(\"Confirm that apiVersion is 6.3.8.0\", function () {\r",
 									"    pm.expect(jsonData.apiVersion).to.eql(\"6.3.8.0\");\r",
@@ -62,6 +74,15 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"protocolProfileBehavior": {
@@ -75,15 +96,9 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://demo.fusio-project.org/index.php",
-							"protocol": "https",
+							"raw": "{{baseUrl}}",
 							"host": [
-								"demo",
-								"fusio-project",
-								"org"
-							],
-							"path": [
-								"index.php"
+								"{{baseUrl}}"
 							],
 							"query": [
 								{
