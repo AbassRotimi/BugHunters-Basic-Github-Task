@@ -2604,7 +2604,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["26e211c9-1d0f-4267-80c8-c9875ab2a36b"]
+    "tests": ["26e211c9-1d0f-4267-80c8-c9875ab2a36b", "9092b5ab-a6d8-4940-b211-e7f7b9fd79c3", "58bf5089-0592-4bf9-90d2-3be105da300d", "6d6bb570-6ed9-41f6-830e-888c5c1b2d3c", "cd0207cb-f00c-4efb-b4c7-b8dc32b1b67c", "ad92c582-f2e2-4925-8df4-739d8fbb33a0", "21bb79a3-4211-427b-92d7-9f20150916f9", "744b225e-1bcc-42d4-aa3b-da5656e7e767", "5b46b60c-bc9f-4368-9cee-a4db14dafd9b", "451d9e3b-1e5d-450f-8df2-3afff0016961", "8c14dba8-c472-4748-901f-6110c38bd004", "1092edc3-cae9-48f0-873d-99107ca0fecb", "53ce21c5-af50-46a5-95f5-a50e86364262"]
   }],
   "urls": ["https://www.konga.com/"],
   "plugins": []
